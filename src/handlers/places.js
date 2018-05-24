@@ -13,7 +13,9 @@ exports.search = async (req, res) => {
       const response = data.results.map(result => ({
         geolocation: result.geometry.location,
         name: result.name,
+        address: result.formatted_address,
         placeId: result.place_id,
+        rating: result.rating,
         open: result.opening_hours.open_now,
         photos: result.photos.map(photo => {
           return config.api.placesPhoto
@@ -21,7 +23,6 @@ exports.search = async (req, res) => {
             .replace('{key}', process.env.GOOGLE_API_KEY);
         }),
       }));
-      console.log(response);
       res.send(response);
     } else {
       throw new Error('Missing results from response', data);
@@ -33,6 +34,31 @@ exports.search = async (req, res) => {
   
 };
 
-exports.searchById = (req, res) => {
-
+exports.searchById = async (req, res) => {
+  try {
+    const { data } = await axios.get(config.api.placesDetail, {
+      params: {
+        placeid: req.params.placeId,
+        key: process.env.GOOGLE_API_KEY,
+      }
+    });
+    if (data && data.status === 'OK' && data.result) {
+      const { geometry, name, rating, place_id, opening_hours, website, formatted_address } = data.result;
+      const response = {
+        geolocation: geometry.location,
+        name,
+        rating,
+        website,
+        address: formatted_address,
+        placeId: place_id,
+        open: opening_hours.open_now,
+      };
+      res.send(response);
+    } else {
+      throw new Error('Missing result from response', data);
+    }
+  } catch (e) {
+    console.log('Something went wrong', e);
+    res.sendStatus(500);
+  }
 }
