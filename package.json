@@ -1,0 +1,25 @@
+{
+  "name": "lunchbot-service",
+  "version": "1.0.0",
+  "description": "Provides lunch suggestions",
+  "main": "src/index.js",
+  "scripts": {
+    "start": "node src/server.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/finafisken/lunchbot-service.git"
+  },
+  "author": "finafisken",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/finafisken/lunchbot-service/issues"
+  },
+  "homepage": "https://github.com/finafisken/lunchbot-service#readme",
+  "dependencies": {
+    "axios": "^0.18.0",
+    "dotenv": "^5.0.1",
+    "express": "^4.16.3"
+  }
+}
