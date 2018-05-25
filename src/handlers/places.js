@@ -6,7 +6,7 @@ exports.search = async (req, res) => {
     const { data } = await axios.get(config.api.placesSearch, {
       params: {
         query: req.params.query,
-        key: process.env.GOOGLE_API_KEY,
+        key: process.env.GOOGLE_API_KEY
       }
     });
     if (data && data.results) {
@@ -21,7 +21,7 @@ exports.search = async (req, res) => {
           return config.api.placesPhoto
             .replace('{ref}', photo.photo_reference)
             .replace('{key}', process.env.GOOGLE_API_KEY);
-        }),
+        })
       }));
       res.send(response);
     } else {
@@ -31,7 +31,6 @@ exports.search = async (req, res) => {
     console.log('Something went wrong', e);
     res.sendStatus(500);
   }
-  
 };
 
 exports.searchById = async (req, res) => {
@@ -39,11 +38,19 @@ exports.searchById = async (req, res) => {
     const { data } = await axios.get(config.api.placesDetail, {
       params: {
         placeid: req.params.placeId,
-        key: process.env.GOOGLE_API_KEY,
+        key: process.env.GOOGLE_API_KEY
       }
     });
     if (data && data.status === 'OK' && data.result) {
-      const { geometry, name, rating, place_id, opening_hours, website, formatted_address } = data.result;
+      const {
+        geometry,
+        name,
+        rating,
+        place_id,
+        opening_hours,
+        website,
+        formatted_address
+      } = data.result;
       const response = {
         geolocation: geometry.location,
         name,
@@ -51,7 +58,7 @@ exports.searchById = async (req, res) => {
         website,
         address: formatted_address,
         placeId: place_id,
-        open: opening_hours.open_now,
+        open: opening_hours.open_now
       };
       res.send(response);
     } else {
@@ -61,4 +68,4 @@ exports.searchById = async (req, res) => {
     console.log('Something went wrong', e);
     res.sendStatus(500);
   }
-}
+};
