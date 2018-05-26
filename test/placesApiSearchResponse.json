@@ -1,0 +1,46 @@
+{
+  "html_attributions" : [],
+  "results" : [
+     {
+        "formatted_address" : "Folkungagatan 76, 116 22 Stockholm, Sweden",
+        "geometry" : {
+           "location" : {
+              "lat" : 59.3147217,
+              "lng" : 18.0784403
+           },
+           "viewport" : {
+              "northeast" : {
+                 "lat" : 59.31612572989272,
+                 "lng" : 18.07976387989272
+              },
+              "southwest" : {
+                 "lat" : 59.31342607010727,
+                 "lng" : 18.07706422010727
+              }
+           }
+        },
+        "icon" : "https://maps.gstatic.com/mapfiles/place_api/icons/restaurant-71.png",
+        "id" : "2ee4e391f41e88f59e4b9f2d7dde34c291f18b1e",
+        "name" : "Amida kolgrill",
+        "opening_hours" : {
+           "open_now" : false,
+           "weekday_text" : []
+        },
+        "photos" : [
+           {
+              "height" : 3024,
+              "html_attributions" : [
+                 "\u003ca href=\"https://maps.google.com/maps/contrib/113788944689615089044/photos\"\u003eSteven Joe\u003c/a\u003e"
+              ],
+              "photo_reference" : "CmRaAAAAjC_e6dWjeX7bziT-eifAuG6FYxTQGoezxKMtoFL3AmRhE4fQkfv729t_46KN4M0B6Z6e0nzjcjAxoL7BIv14NLyycJ_rraNhHfW0ovcRfogAp3idYnfsdNRD_rlCO0iUEhB7YSSVkv14hk9sdier7rwdGhTAeVdtPzClFD9OIvShryL4IXd01g",
+              "width" : 4032
+           }
+        ],
+        "place_id" : "ChIJU_anGPp3X0YRTIbCK2z6-bA",
+        "rating" : 4.4,
+        "reference" : "CmRbAAAAurtEo2QB0obXUti6Kfq7xj1xSpCMcg2mKF1W5sO6n99x86UZ1wyWxnlBVcLYnE_F_ZAC_FPAZgKN7NIoCxRcdUqJ-xVF8GaMX5BqtgwiP51Q0vd8ZNO5V4s1QeCZ_LHNEhCmy-obRfVTd3Q7qC9KXVDIGhRPHqm1JXEKiYiMDu-W_3MpLoszuA",
+        "types" : [ "restaurant", "food", "point_of_interest", "establishment" ]
+     }
+  ],
+  "status" : "OK"
+}
