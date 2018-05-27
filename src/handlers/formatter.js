@@ -29,5 +29,17 @@ const placesFormatter = ({
   photos: photoFormatter(photos)
 });
 
+const distanceFormatter = ({
+  destination_addresses,
+  origin_addresses,
+  rows
+}) => ({
+  from: origin_addresses[0],
+  to: destination_addresses[0],
+  distance: rows[0].elements[0].distance.text,
+  time: rows[0].elements[0].duration.text
+});
+
 exports.photoFormatter = photoFormatter;
 exports.placesFormatter = placesFormatter;
+exports.distanceFormatter = distanceFormatter;

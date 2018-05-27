@@ -8,9 +8,11 @@ const placesApiSearchByIdResponse = require('./data/placesApiSearchByIdResponse.
 
 describe('Place search handler', () => {
   test('correct response on valid request', async () => {
-    mockedAxios.get.mockImplementationOnce(() => Promise.resolve({
-      data: placesApiSearchResponse
-    }));
+    mockedAxios.get.mockImplementationOnce(() =>
+      Promise.resolve({
+        data: placesApiSearchResponse
+      })
+    );
 
     const expected = placesApiSearchResponse.results.map(placesFormatter);
     let actual;
@@ -23,16 +25,20 @@ describe('Place search handler', () => {
     );
 
     expect(actual).toEqual(expected);
-    expect(mockedAxios.get).toHaveBeenCalledWith(
-      config.api.placesSearch,
-      { params: { query: 'amidakolgrill' } }
-    );
+    expect(mockedAxios.get).toHaveBeenCalledWith(config.api.placesSearch, {
+      params: { query: 'amidakolgrill' }
+    });
   });
 
   test('status code 500 when API response status not OK', async () => {
-    mockedAxios.get.mockImplementationOnce(() => Promise.resolve({
-      data: { results: [], status: 'REQUEST_DENIED' }
-    }));
+    // since we expect an error, don't bloat the test
+    console.error = jest.fn();
+
+    mockedAxios.get.mockImplementationOnce(() =>
+      Promise.resolve({
+        data: { results: [], status: 'REQUEST_DENIED' }
+      })
+    );
 
     let actual;
     await placesSearch(
@@ -44,10 +50,17 @@ describe('Place search handler', () => {
     );
 
     expect(actual).toBe(500);
+    expect(console.error).toHaveBeenCalled();
+    console.error.mockRestore();
   });
 
   test('status code 500 when API request failed', async () => {
-    mockedAxios.get.mockImplementationOnce(() => Promise.reject('something broken'));
+    // since we expect an error, don't bloat the test
+    console.error = jest.fn();
+
+    mockedAxios.get.mockImplementationOnce(() =>
+      Promise.reject('something broken')
+    );
 
     let actual;
     await placesSearch(
@@ -59,14 +72,18 @@ describe('Place search handler', () => {
     );
 
     expect(actual).toBe(500);
+    expect(console.error).toHaveBeenCalled();
+    console.error.mockRestore();
   });
 });
 
 describe('Place search by id handler', () => {
   test('correct response on valid request', async () => {
-    mockedAxios.get.mockImplementationOnce(() => Promise.resolve({
-      data: placesApiSearchByIdResponse
-    }));
+    mockedAxios.get.mockImplementationOnce(() =>
+      Promise.resolve({
+        data: placesApiSearchByIdResponse
+      })
+    );
 
     const expected = placesFormatter(placesApiSearchByIdResponse.result);
     let actual;
@@ -79,16 +96,20 @@ describe('Place search by id handler', () => {
     );
 
     expect(actual).toEqual(expected);
-    expect(mockedAxios.get).toHaveBeenCalledWith(
-      config.api.placesDetail,
-      { params: { placeid: 'ChIJU_anGPp3X0YRTIbCK2z6-bA' } }
-    );
+    expect(mockedAxios.get).toHaveBeenCalledWith(config.api.placesDetail, {
+      params: { placeid: 'ChIJU_anGPp3X0YRTIbCK2z6-bA' }
+    });
   });
 
   test('status code 500 when API response status not OK', async () => {
-    mockedAxios.get.mockImplementationOnce(() => Promise.resolve({
-      data: { result: [], status: 'REQUEST_DENIED' }
-    }));
+    // since we expect an error, don't bloat the test
+    console.error = jest.fn();
+
+    mockedAxios.get.mockImplementationOnce(() =>
+      Promise.resolve({
+        data: { result: [], status: 'REQUEST_DENIED' }
+      })
+    );
 
     let actual;
     await placesSearchById(
@@ -100,10 +121,17 @@ describe('Place search by id handler', () => {
     );
 
     expect(actual).toBe(500);
+    expect(console.error).toHaveBeenCalled();
+    console.error.mockRestore();
   });
 
   test('status code 500 when API request failed', async () => {
-    mockedAxios.get.mockImplementationOnce(() => Promise.reject('something broken'));
+    // since we expect an error, don't bloat the test
+    console.error = jest.fn();
+
+    mockedAxios.get.mockImplementationOnce(() =>
+      Promise.reject('something broken')
+    );
 
     let actual;
     await placesSearchById(
@@ -115,5 +143,7 @@ describe('Place search by id handler', () => {
     );
 
     expect(actual).toBe(500);
+    expect(console.error).toHaveBeenCalled();
+    console.error.mockRestore();
   });
 });

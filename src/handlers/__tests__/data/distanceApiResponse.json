@@ -1,0 +1,26 @@
+{
+  "destination_addresses": [
+      "Folkungagatan 76, 116 22 Stockholm, Sweden"
+  ],
+  "origin_addresses": [
+      "Ringvägen 52, 118 67 Stockholm, Sweden"
+  ],
+  "rows": [
+      {
+          "elements": [
+              {
+                  "distance": {
+                      "text": "1.5 km",
+                      "value": 1514
+                  },
+                  "duration": {
+                      "text": "19 mins",
+                      "value": 1126
+                  },
+                  "status": "OK"
+              }
+          ]
+      }
+  ],
+  "status": "OK"
+}

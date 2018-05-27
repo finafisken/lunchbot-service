@@ -14,6 +14,7 @@ exports.placesSearch = async (req, res) => {
       const response = data.results.map(placesFormatter);
       res.send(response);
     } else {
+      console.error('###', data);
       throw new Error('Bad response from Places API');
     }
   } catch (e) {
