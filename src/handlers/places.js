@@ -14,7 +14,7 @@ exports.placesSearch = async (req, res) => {
       const response = data.results.map(placesFormatter);
       res.send(response);
     } else {
-      throw new Error('Bad response from Places API', data);
+      throw new Error('Bad response from Places API');
     }
   } catch (e) {
     console.error('Something went wrong', e);
@@ -34,7 +34,7 @@ exports.placesSearchById = async (req, res) => {
       const response = placesFormatter(data.result);
       res.send(response);
     } else {
-      throw new Error('Bad response from Places API', data);
+      throw new Error('Bad response from Places API');
     }
   } catch (e) {
     console.error('Something went wrong', e);

@@ -1,0 +1,293 @@
+{
+  "html_attributions" : [],
+  "result" : {
+     "address_components" : [
+        {
+           "long_name" : "76",
+           "short_name" : "76",
+           "types" : [ "street_number" ]
+        },
+        {
+           "long_name" : "Folkungagatan",
+           "short_name" : "Folkungagatan",
+           "types" : [ "route" ]
+        },
+        {
+           "long_name" : "Södermalm",
+           "short_name" : "Södermalm",
+           "types" : [ "sublocality_level_1", "sublocality", "political" ]
+        },
+        {
+           "long_name" : "Stockholm",
+           "short_name" : "Stockholm",
+           "types" : [ "postal_town" ]
+        },
+        {
+           "long_name" : "Stockholms län",
+           "short_name" : "Stockholms län",
+           "types" : [ "administrative_area_level_1", "political" ]
+        },
+        {
+           "long_name" : "Sweden",
+           "short_name" : "SE",
+           "types" : [ "country", "political" ]
+        },
+        {
+           "long_name" : "116 22",
+           "short_name" : "116 22",
+           "types" : [ "postal_code" ]
+        }
+     ],
+     "adr_address" : "\u003cspan class=\"street-address\"\u003eFolkungagatan 76\u003c/span\u003e, \u003cspan class=\"postal-code\"\u003e116 22\u003c/span\u003e \u003cspan class=\"locality\"\u003eStockholm\u003c/span\u003e, \u003cspan class=\"country-name\"\u003eSweden\u003c/span\u003e",
+     "formatted_address" : "Folkungagatan 76, 116 22 Stockholm, Sweden",
+     "formatted_phone_number" : "08-442 03 60",
+     "geometry" : {
+        "location" : {
+           "lat" : 59.3147217,
+           "lng" : 18.0784403
+        },
+        "viewport" : {
+           "northeast" : {
+              "lat" : 59.3161248802915,
+              "lng" : 18.0797630302915
+           },
+           "southwest" : {
+              "lat" : 59.31342691970849,
+              "lng" : 18.0770650697085
+           }
+        }
+     },
+     "icon" : "https://maps.gstatic.com/mapfiles/place_api/icons/restaurant-71.png",
+     "id" : "2ee4e391f41e88f59e4b9f2d7dde34c291f18b1e",
+     "international_phone_number" : "+46 8 442 03 60",
+     "name" : "Amida kolgrill",
+     "opening_hours" : {
+        "open_now" : true,
+        "periods" : [
+           {
+              "close" : {
+                 "day" : 0,
+                 "time" : "2300"
+              },
+              "open" : {
+                 "day" : 0,
+                 "time" : "1200"
+              }
+           },
+           {
+              "close" : {
+                 "day" : 1,
+                 "time" : "2300"
+              },
+              "open" : {
+                 "day" : 1,
+                 "time" : "1100"
+              }
+           },
+           {
+              "close" : {
+                 "day" : 2,
+                 "time" : "2300"
+              },
+              "open" : {
+                 "day" : 2,
+                 "time" : "1100"
+              }
+           },
+           {
+              "close" : {
+                 "day" : 3,
+                 "time" : "2300"
+              },
+              "open" : {
+                 "day" : 3,
+                 "time" : "1100"
+              }
+           },
+           {
+              "close" : {
+                 "day" : 4,
+                 "time" : "2300"
+              },
+              "open" : {
+                 "day" : 4,
+                 "time" : "1100"
+              }
+           },
+           {
+              "close" : {
+                 "day" : 5,
+                 "time" : "2300"
+              },
+              "open" : {
+                 "day" : 5,
+                 "time" : "1100"
+              }
+           },
+           {
+              "close" : {
+                 "day" : 6,
+                 "time" : "2300"
+              },
+              "open" : {
+                 "day" : 6,
+                 "time" : "1200"
+              }
+           }
+        ],
+        "weekday_text" : [
+           "Monday: 11:00 AM – 11:00 PM",
+           "Tuesday: 11:00 AM – 11:00 PM",
+           "Wednesday: 11:00 AM – 11:00 PM",
+           "Thursday: 11:00 AM – 11:00 PM",
+           "Friday: 11:00 AM – 11:00 PM",
+           "Saturday: 12:00 – 11:00 PM",
+           "Sunday: 12:00 – 11:00 PM"
+        ]
+     },
+     "photos" : [
+        {
+           "height" : 3024,
+           "html_attributions" : [
+              "\u003ca href=\"https://maps.google.com/maps/contrib/113788944689615089044/photos\"\u003eSteven Joe\u003c/a\u003e"
+           ],
+           "photo_reference" : "CmRaAAAAwPKxVLVRbZXd3aW5wFqfOS3ZVdx2RtJwf--g6eq7CX_AF42I6h4-Y8d802Ad3-ICIRtATD8V45ysXSBCTyQy2oH0msJV36Yho1CWZJDOSBqErWLbt1W2n5hbt526S7E8EhBm9BCec1x1OgX9-jD3NrcJGhTTyexqCMBaD7p7bze-qbmDbzkadA",
+           "width" : 4032
+        },
+        {
+           "height" : 3024,
+           "html_attributions" : [
+              "\u003ca href=\"https://maps.google.com/maps/contrib/106115607116645064143/photos\"\u003eBadbar Badkar\u003c/a\u003e"
+           ],
+           "photo_reference" : "CmRaAAAAnHlBgH6M7F99_h3dATc-Ce_RcAxJP-24uy-pwo9lava-GQEA8Pb8VsNPmvamF3VKygb5dV6mtxv_0Qwp0OqNtLSjhLITJ1w5gmhdj5eVl93MLh5yddfyshlOTRfyYfCSEhD_aTNZPBfQ_IN6tiqq939oGhQ5I4ykp5COiFk2XAwlq__n4Bmblw",
+           "width" : 4032
+        },
+        {
+           "height" : 2160,
+           "html_attributions" : [
+              "\u003ca href=\"https://maps.google.com/maps/contrib/115542484425582785426/photos\"\u003eBASIT AZIZ\u003c/a\u003e"
+           ],
+           "photo_reference" : "CmRaAAAAArhRTsbZxRqtt9qyXJHuTPmhuVWvCIh_upzouyjihQLqpwNxoVEuPTN8WvmGREmXjaWXJdf5mKzF9C91EpdjDlVDTz8MPWVRCyvSdc0x1rHz6yfpKOlejA8gcJC1SaaAEhCatfbEPB8KstRTlrQhV2XBGhSL0-mlmJEPz4gEQB2f_etTVqNEJQ",
+           "width" : 3840
+        },
+        {
+           "height" : 2160,
+           "html_attributions" : [
+              "\u003ca href=\"https://maps.google.com/maps/contrib/117096733509984931541/photos\"\u003eBahram Bahar\u003c/a\u003e"
+           ],
+           "photo_reference" : "CmRaAAAAapvn0_RIyvcB-4Ot8hiG0NDJz04KMbtBB1jkucy4JU93ouIsaCXEt1SgqYEW_pBwZtAagMSe_iRGRMa7he2jxHuQELwVFu0ZaoZ9Uz-tGvSup60JdGSNv0M8ESg-aslzEhD5Ixqozzx8dtPJbZr3me4vGhQ-azgDHErGkrm_7D45rZdgHuHioA",
+           "width" : 3840
+        },
+        {
+           "height" : 2976,
+           "html_attributions" : [
+              "\u003ca href=\"https://maps.google.com/maps/contrib/111746105339393644714/photos\"\u003eRonia Razavi\u003c/a\u003e"
+           ],
+           "photo_reference" : "CmRaAAAAQIJQL8VyLLail3SYvBV6fCrQbmte8UAHoSsuA2RE8eldK2aNcvqDYlqhhAJrLotO7H6qMo-3suHcKmU55oiTg9SEH1rMfa-tyW-KQLZmmIS-tZx5VavuhyMP7xua8tZrEhD2D2CFxVPHXx9PrHcCcv0aGhRSsZ3TddwKW1c5k-ex6MLbN7286A",
+           "width" : 3968
+        },
+        {
+           "height" : 2988,
+           "html_attributions" : [
+              "\u003ca href=\"https://maps.google.com/maps/contrib/102981627109496079966/photos\"\u003eEric Ekberg\u003c/a\u003e"
+           ],
+           "photo_reference" : "CmRaAAAA2sFhSR0gcBIQ1jRVKb-sad0CKg3eWhC-5vipwUDDvnA-_qSS7MUqAZbEdiFep6jCmguvPWTBxG27LUOEXYVheXQSf_4RSHp5MXsFNdlijstV6ApyV3pNGhzL0PDH2MobEhAri9-f3JMPcOHJvyU1XBPgGhSmT-S3LYmXVUIpVJX6GtiVPsv9cQ",
+           "width" : 5312
+        },
+        {
+           "height" : 4032,
+           "html_attributions" : [
+              "\u003ca href=\"https://maps.google.com/maps/contrib/106758547021043118746/photos\"\u003eMaher Finjan\u003c/a\u003e"
+           ],
+           "photo_reference" : "CmRaAAAA51eP0ayFrAj4XeHOG59eaAnoabusS_zRHkBGv3y6lGOktX_QdChVbq47fru2V-uiCoPWYChWPtZpZtKen0yW9jeKNNV73cUvuBNA36EJttYIlC1vWXmhewMiifdLOtIdEhBF-YYYPPnyjDdm_RvHGmJUGhS0Dyijdn4xLujZLfk7KTlN7Vun2w",
+           "width" : 2268
+        },
+        {
+           "height" : 2448,
+           "html_attributions" : [
+              "\u003ca href=\"https://maps.google.com/maps/contrib/115943313110155385737/photos\"\u003eGabriel K.\u003c/a\u003e"
+           ],
+           "photo_reference" : "CmRaAAAAzLnb_y3T1l4WflZPm_oAX3dutoF-5LeSXmtTrQ4XqaLCytyzkU0BduaCzc49M_P3WW2wiaHQn-XCpPbao2FHX-3ThXXGDguRRC9toJOohmjBKt5q-2jk38bttffzpTM7EhAwRUnKsmQBObWwqYicJZuHGhQqhIIeBXqR4fA7jGExNxJ-4wLHaw",
+           "width" : 3264
+        },
+        {
+           "height" : 4048,
+           "html_attributions" : [
+              "\u003ca href=\"https://maps.google.com/maps/contrib/105896862773862579258/photos\"\u003eMatthew Lim\u003c/a\u003e"
+           ],
+           "photo_reference" : "CmRaAAAAtrqPHr761F1Vs_ycQS-kqiGylONAs3u6hzk7fwoFqnoIqQOIIOLFU2Xxu1dEgIFXMRBMBg2gDB2tn-6hJvdKoFsXOLmYxIRHpCMe678z-8NPCkwwB9kShOBm5OLSXVq8EhB2DMUWe86hg3I-wB9shXsdGhRJ1GAmdjKsiN8byQ7vCg_bpxHahw",
+           "width" : 3036
+        },
+        {
+           "height" : 2988,
+           "html_attributions" : [
+              "\u003ca href=\"https://maps.google.com/maps/contrib/111191039322737466994/photos\"\u003eAli Fakhraee\u003c/a\u003e"
+           ],
+           "photo_reference" : "CmRaAAAAyLKZHy-aXawN74eI-cpAcwXPnvZb_MVOMGcqiCWI01PWcb-X0VbTBBt5GZtDFdaMELAa37mNQIjnZtegd1eVYchCzGO_s7lQuRpGnBP6YwyjojtLMK7OEaItLXbsMNftEhDwuT485bDUpkPiRaV4n0uhGhShFUTg_DGooiSeoYmY0LW6XTClVA",
+           "width" : 5312
+        }
+     ],
+     "place_id" : "ChIJU_anGPp3X0YRTIbCK2z6-bA",
+     "rating" : 4.4,
+     "reference" : "CmRSAAAAKzD-XEk10n9qLie8-YU_w8JNFu9KvvcDB8OwRww2JxATST7MFxVAoXpwsVEDTSZnVh5EmmvApRSENnexQ-o4beclo5DSgV7cE0H49nIvSMLdAXmlR5rOy0CKRT-6yU02EhAd4PUN59dEn-Oz_YgBR24cGhR8MsM-HGsYzS4ufaTZrPhp0tuicA",
+     "reviews" : [
+        {
+           "author_name" : "Varun Krish",
+           "author_url" : "https://www.google.com/maps/contrib/109073657468896209045/reviews",
+           "language" : "en",
+           "profile_photo_url" : "https://lh5.googleusercontent.com/-0VBk8dI70SI/AAAAAAAAAAI/AAAAAAAAJpI/N1U5EqNIshA/s128-c0x00000000-cc-rp-mo-ba2/photo.jpg",
+           "rating" : 4,
+           "relative_time_description" : "2 months ago",
+           "text" : "My wife and I had lunch at Amida when we were in Stockholm in March 2018. We were looking places that weren't too expensive while at the same time serving quality food and we found what we wanted at Amida. \n\nThe servings were large and contained a variety of different elements constituting a plethora of flavors. I also really liked that you could pour yourself unlimited amount of the really nice tea they had on offer. Overall, a really satisfying lunch in Stockholm.",
+           "time" : 1521212424
+        },
+        {
+           "author_name" : "Florentine Christensen",
+           "author_url" : "https://www.google.com/maps/contrib/115872810880503096336/reviews",
+           "language" : "en",
+           "profile_photo_url" : "https://lh6.googleusercontent.com/-xyRRMDawTTI/AAAAAAAAAAI/AAAAAAAAioA/_ZYSh9Hlkcc/s128-c0x00000000-cc-rp-mo-ba3/photo.jpg",
+           "rating" : 5,
+           "relative_time_description" : "a month ago",
+           "text" : "They are by far the best \"fast food\" I had in Stockholm. You get enormous portions and super tasty food with fresh ingredients. The staff is extremely nice. It's definitely worth a visit.",
+           "time" : 1524039689
+        },
+        {
+           "author_name" : "Steven Joe",
+           "author_url" : "https://www.google.com/maps/contrib/113788944689615089044/reviews",
+           "language" : "en",
+           "profile_photo_url" : "https://lh4.googleusercontent.com/-RMYa9c6A3O4/AAAAAAAAAAI/AAAAAAAAAPY/uikdr_vQz94/s128-c0x00000000-cc-rp-mo-ba4/photo.jpg",
+           "rating" : 5,
+           "relative_time_description" : "in the last week",
+           "text" : "Very happy with the size of portions and the food quality. We ordered the mixed grill, falafel, chicken plates. Staff doesn’t speak English so you’ll have to point at the menu when you get there. Decor and bathroom were soso but it was good enough in the first two areas that we didn’t care.",
+           "time" : 1527103744
+        },
+        {
+           "author_name" : "Samer Al-Dury",
+           "author_url" : "https://www.google.com/maps/contrib/111216719381025391077/reviews",
+           "language" : "en",
+           "profile_photo_url" : "https://lh6.googleusercontent.com/-N8MGmIPTZPA/AAAAAAAAAAI/AAAAAAAAAFA/OVWBS5y9Qik/s128-c0x00000000-cc-rp-mo-ba3/photo.jpg",
+           "rating" : 4,
+           "relative_time_description" : "2 months ago",
+           "text" : "A nice place in Stockholm for Turkish food lovers. The food is delicious, reasonably priced. The place is pretty dark and cold. Menu is quite poor but if you’re eating Turkish food then they have the major things. I’d go there again. Service is ok.",
+           "time" : 1521214577
+        },
+        {
+           "author_name" : "Mohamed AlRayes",
+           "author_url" : "https://www.google.com/maps/contrib/107191421621049860656/reviews",
+           "language" : "en",
+           "profile_photo_url" : "https://lh6.googleusercontent.com/-XVgnNY5-Hd4/AAAAAAAAAAI/AAAAAAAAAAA/AIcfdXA_2kljkpccaU6Md7tdWSlQ1ifOZA/s128-c0x00000000-cc-rp-mo-ba3/photo.jpg",
+           "rating" : 4,
+           "relative_time_description" : "a month ago",
+           "text" : "Turkish restaurant that serves a very tasty food,  me and my wife loved our lunch here. I took a star off because of the bad customer service they've got, they don't speak english, laugh at you, and only smile and treat you well if you are a hot chick. To order you need to approach the counter, place the order and pay. Then they will serve you the food while waiting on your table. Food is great, reasonably prices but the customer service is bad, located in the SoFo area of Stockholm.",
+           "time" : 1523817954
+        }
+     ],
+     "scope" : "GOOGLE",
+     "types" : [ "restaurant", "food", "point_of_interest", "establishment" ],
+     "url" : "https://maps.google.com/?cid=12752499162373850700",
+     "utc_offset" : 120,
+     "vicinity" : "Folkungagatan 76, Stockholm",
+     "website" : "http://amida.se/"
+  },
+  "status" : "OK"
+}
