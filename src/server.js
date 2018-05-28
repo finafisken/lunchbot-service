@@ -1,6 +1,6 @@
 const express = require('express');
-const { placesSearchById, placesSearch } = require('./handlers/places.js');
-const distance = require('./handlers/distance.js');
+const { placesSearchByIdHandler, placesSearchHandler } = require('./handlers/placesHandler.js');
+const { distanceByIdHandler } = require('./handlers/distanceHandler.js');
 
 // read env variables from .env
 require('dotenv').config();
@@ -10,8 +10,8 @@ const app = express();
 
 // route handlers
 app.get('/', (req, res) => res.send('Well, hello to you good sir!'));
-app.get('/search/:query', placesSearch);
-app.get('/search/id/:placeId', placesSearchById);
-app.get('/distance/:placeId', distance);
+app.get('/search/:query', placesSearchHandler);
+app.get('/search/id/:placeId', placesSearchByIdHandler);
+app.get('/distance/:placeId', distanceByIdHandler);
 
 app.listen(PORT, () => console.log(`Lunchbot service running on port ${PORT}`));
