@@ -1,10 +1,9 @@
-const AWS = require('aws-sdk');
+const { placesSearchById } = require('../services/placesApi.js');
+const dynamodb = require('../../utils/dynamodb.js');
 
-// configure aws here
+const addSuggestion = placeId =>
+  placesSearchById(placeId).then(place =>
+    dynamodb.addItem({ ...place, lastVisitedAt: 0 })
+  );
 
-const addSuggestion = (place) => new Promise((resolve, reject) => {
-  var dynamodb = new AWS.DynamoDB.DocumentClient();
-  resolve('Suggestion was added!');
-});
-
-exports = addSuggestion;
+module.exports = addSuggestion;

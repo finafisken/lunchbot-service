@@ -25,7 +25,7 @@ app.get('/search/id/:placeId', placesSearchByIdHandler);
 app.get('/distance/:placeId', distanceByIdHandler);
 
 // main
-app.post('/suggestion', addSuggestionHandler);
+app.post('/suggestion/:placeId', addSuggestionHandler);
 app.put('/suggestion/:placeId', visitedSuggestionHandler);
 app.get('/suggestion', getSuggestionsHandler);
 

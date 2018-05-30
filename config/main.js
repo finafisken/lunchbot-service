@@ -9,7 +9,9 @@ const config = {
     // MTG Office Ringvägen 52
     lat: 59.3100131,
     lng: 18.0592603
-  }
+  },
+  dynamoDbTableName: 'lunchbot-location-db',
+  awsRegion: 'eu-central-1',
 };
 
 module.exports = config;
