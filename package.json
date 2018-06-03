@@ -5,9 +5,12 @@
   "main": "src/index.js",
   "scripts": {
     "start": "node src/server.js",
-    "debug": "node --inspect src/server.js",
+    "dev": "node --inspect src/server.js",
     "test": "jest",
-    "test:watch": "jest --watchAll"
+    "test:watch": "jest --watchAll",
+    "docker:build": "docker build . -t lunchbot-service",
+    "docker:start": "docker run -d -p 80:1337 --env-file .env lunchbot-service",
+    "docker:dev": "docker run -p 8080:1337 --env-file .env lunchbot-service"
   },
   "repository": {
     "type": "git",

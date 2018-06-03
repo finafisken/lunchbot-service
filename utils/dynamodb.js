@@ -43,6 +43,7 @@ exports.updateItem = placeId =>
         ExpressionAttributeValues: {
           ':timestamp': Date.now()
         },
+        ConditionExpression: 'attribute_exists(placeId)',
         ReturnValues: 'ALL_NEW'
       },
       (err, data) => {
