@@ -12,6 +12,10 @@ const config = {
   },
   dynamoDbTableName: 'lunchbot-location-db',
   awsRegion: 'eu-central-1',
+  suggestions: {
+    daysSinceLastVisit: 2,
+    numberOfSuggestions: 3,
+  }
 };
 
 module.exports = config;

@@ -26,7 +26,7 @@ const placesFormatter = ({
   address: formatted_address,
   placeId: place_id,
   open: opening_hours.open_now,
-  photos: photoFormatter(photos)
+  photos: photoFormatter(photos.slice(0, 3))
 });
 
 const distanceFormatter = ({
