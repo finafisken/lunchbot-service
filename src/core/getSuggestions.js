@@ -1,14 +1,25 @@
 const dynamodb = require('../../utils/dynamodb.js');
+const shuffle = require('../../utils/shuffle.js');
 const config = require('../../config/main.js');
 
-const getSuggestions = async () => {
-  const { Items } = await dynamodb.getItems();
-  const suggestionsPool = [...Items];
-  const suggestions = suggestionsPool
-    .sort(() => 0.5 - Math.random())
-    .slice(0, config.suggestions.numberOfSuggestions);
+const HR_MS =  3600000; // hour in ms
 
-  return suggestions;
+const suggestions = {
+  generatedAt: null,
+  places: [],
+};
+
+const getSuggestions = async () => {
+  const lifetimeThreshold = Date.now() - (HR_MS * config.suggestions.suggestionLifetime);
+
+  // only generate new suggestions if lifetime has expired
+  if (!suggestions.generatedAt || suggestions.generatedAt <= lifetimeThreshold) {
+    const { Items = [] } = await dynamodb.getItems();
+    suggestions.places = shuffle(Items).slice(0, config.suggestions.numberOfSuggestions);
+    suggestions.generatedAt = Date.now();
+  }
+
+  return suggestions.places;
 };
 
 module.exports = getSuggestions;

@@ -15,6 +15,7 @@ const config = {
   suggestions: {
     daysSinceLastVisit: 2,
     numberOfSuggestions: 3,
+    suggestionLifetime: 6, // hours
   }
 };
 
