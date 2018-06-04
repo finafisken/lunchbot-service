@@ -1,7 +1,7 @@
 const config = {
   api: {
     placesSearch: 'https://maps.googleapis.com/maps/api/place/textsearch/json',
-    placesPhoto: 'https://maps.googleapis.com/maps/api/place/photo?photoreference={ref}&key={key}',
+    placesPhoto: 'https://maps.googleapis.com/maps/api/place/photo?photoreference={ref}&key={key}&maxwidth=800',
     placesDetail: 'https://maps.googleapis.com/maps/api/place/details/json',
     distanceMatrix: 'https://maps.googleapis.com/maps/api/distancematrix/json'
   },
