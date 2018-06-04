@@ -1,6 +1,6 @@
 const axios = require('axios');
 const config = require('../../config/main.js');
-const { placesFormatter } = require('../../utils/formatter.js');
+const { placesFormatter, placesDetailFormatter } = require('../../utils/formatter.js');
 
 exports.placesSearch = query => {
   return axios
@@ -20,7 +20,7 @@ exports.placesSearch = query => {
     });
 };
 
-exports.placesSearchById = placeid => {
+exports.placesSearchById = (placeid, detailed) => {
   return axios
     .get(config.api.placesDetail, {
       params: {
@@ -30,7 +30,8 @@ exports.placesSearchById = placeid => {
     })
     .then(({ data }) => {
       if (data && data.status === 'OK' && data.result) {
-        return placesFormatter(data.result);
+        const format = detailed ? placesDetailFormatter : placesFormatter;
+        return format(data.result);
       } else {
         const reason = (data && data.status) || 'Bad response from API';
         return Promise.reject(reason);

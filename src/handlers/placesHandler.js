@@ -12,7 +12,7 @@ exports.placesSearchHandler = async (req, res) => {
 
 exports.placesSearchByIdHandler = async (req, res) => {
   try {
-    const response = await placesSearchById(req.params.placeId);
+    const response = await placesSearchById(req.params.placeId, true);
     res.send(response);
   } catch (e) {
     console.error('Something went wrong', e);

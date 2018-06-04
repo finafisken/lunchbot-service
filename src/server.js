@@ -1,4 +1,5 @@
 const express = require('express');
+const helmet = require('helmet');
 const {
   placesSearchByIdHandler,
   placesSearchHandler
@@ -13,8 +14,10 @@ const {
 // read env variables from .env
 require('dotenv').config();
 
+// setup
 const PORT = process.env.PORT || 1337;
 const app = express();
+app.use(helmet());
 
 // allow CORS request from clients
 app.use(function(req, res, next) {

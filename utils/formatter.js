@@ -12,16 +12,32 @@ const photoFormatter = photos => {
 const placesFormatter = ({
   geometry,
   name,
+  place_id,
+  website,
+  formatted_address,
+}) => ({
+  name,
+  website,
+  geolocation: geometry.location,
+  address: formatted_address,
+  placeId: place_id,
+});
+
+const placesDetailFormatter = ({
+  geometry,
+  name,
   rating,
   place_id,
   opening_hours,
   website,
+  url,
   formatted_address,
   photos
 }) => ({
   name,
   rating,
   website,
+  mapsUrl: url,
   geolocation: geometry.location,
   address: formatted_address,
   placeId: place_id,
@@ -42,4 +58,5 @@ const distanceFormatter = ({
 
 exports.photoFormatter = photoFormatter;
 exports.placesFormatter = placesFormatter;
+exports.placesDetailFormatter = placesDetailFormatter;
 exports.distanceFormatter = distanceFormatter;
