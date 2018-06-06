@@ -1,6 +1,5 @@
 ## todo
 - authentication
-- better caching
 - aws permissions/config for ec2
 - figure out suggestion logic
 - sanitize input params

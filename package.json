@@ -28,7 +28,8 @@
     "dotenv": "^5.0.1",
     "express": "^4.16.3",
     "helmet": "^3.12.1",
-    "morgan": "^1.9.0"
+    "morgan": "^1.9.0",
+    "node-cache": "^4.2.0"
   },
   "devDependencies": {
     "jest": "^23.0.0",
