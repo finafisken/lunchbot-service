@@ -1,5 +1,5 @@
 const AWS = require('aws-sdk');
-const config = require('../config/main.js');
+const config = require('../../config/main.js');
 
 // https://docs.aws.amazon.com/AWSJavaScriptSDK/latest/AWS/DynamoDB/DocumentClient.html
 

@@ -1,4 +1,4 @@
-const dynamodb = require('../../utils/dynamodb.js');
+const dynamodb = require('../services/dynamodb.js');
 
 const visitedSuggestion = placeId => dynamodb.updateItem(placeId);
 

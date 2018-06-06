@@ -1,5 +1,5 @@
 const { placesSearchById } = require('../services/placesApi.js');
-const dynamodb = require('../../utils/dynamodb.js');
+const dynamodb = require('../services/dynamodb.js');
 
 const addSuggestion = placeId =>
   placesSearchById(placeId).then(place =>

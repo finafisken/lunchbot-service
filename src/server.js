@@ -1,5 +1,7 @@
 const express = require('express');
 const helmet = require('helmet');
+const morgan = require('morgan');
+const corsHeaders = require('./middlewares/cors.js');
 const {
   placesSearchByIdHandler,
   placesSearchHandler
@@ -18,22 +20,8 @@ require('dotenv').config();
 const PORT = process.env.PORT || 1337;
 const app = express();
 app.use(helmet());
-
-// allow CORS request from clients
-app.use(function(req, res, next) {
-  const allowedHeaders = [
-    'Origin',
-    'X-Requested-With',
-    'Content-Type',
-    'Accept',
-    'Authentication'
-  ].join(',');
-
-  res.header('Access-Control-Allow-Origin', '*');
-  res.header('Access-Control-Allow-Methods', 'GET,PUT,POST,OPTIONS');
-  res.header('Access-Control-Allow-Headers', allowedHeaders);
-  next();
-});
+app.use(morgan('dev'));
+app.use(corsHeaders);
 
 // route handlers
 app.get('/', (req, res) => res.send('Hello to you good sir!'));

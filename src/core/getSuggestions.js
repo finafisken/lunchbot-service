@@ -1,5 +1,5 @@
 const { placesSearchById } = require('../services/placesApi.js');
-const dynamodb = require('../../utils/dynamodb.js');
+const dynamodb = require('../services/dynamodb.js');
 const shuffle = require('../../utils/shuffle.js');
 const config = require('../../config/main.js');
 
