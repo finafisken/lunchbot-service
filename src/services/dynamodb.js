@@ -73,11 +73,11 @@ exports.getItems = () =>
           ':lastVisitedThreshold': lastVisitedThreshold
         }
       },
-      (err, data) => {
+      (err, { Items = [] }) => {
         if (err) {
           return reject(err);
         } else {
-          return resolve(data);
+          return resolve(Items);
         }
       }
     );

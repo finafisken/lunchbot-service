@@ -1,4 +1,5 @@
 const { placesSearchById } = require('../services/placesApi.js');
+const { distanceById } = require('../services/distanceApi.js');
 const dynamodb = require('../services/dynamodb.js');
 const shuffle = require('../../utils/shuffle.js');
 const config = require('../../config/main.js');
@@ -12,22 +13,33 @@ const getSuggestions = async () => {
   let suggestions = cache.get('suggestions');
 
   if (!suggestions) {
-    const { Items = [] } = await dynamodb.getItems();
-    suggestions = shuffle(Items).slice(0, config.suggestions.numberOfSuggestions);
+    const places = await dynamodb.getItems();
+    suggestions = shuffle(places).slice(0, config.suggestions.numberOfSuggestions);
+
     cache.set('suggestions', suggestions, suggestionLifetime);
-    cache.del('detailedSuggestions');
+    cache.del('enhancedSuggestions');
   }
 
-  // populate suggestions with fresh data from places api (small cache)
-  let detailedSuggestions = cache.get('detailedSuggestions');
+  // populate suggestions with fresh data from places/distance api (small cache)
+  let enhancedSuggestions = cache.get('enhancedSuggestions');
 
-  if (!detailedSuggestions) {
-    const getDetails = suggestions.map(place => placesSearchById(place.placeId, true));
-    detailedSuggestions = await Promise.all(getDetails);
-    cache.set('detailedSuggestions', detailedSuggestions, detailsLifetime);
+  if (!enhancedSuggestions) {
+    const detailedSuggestions = await Promise.all(
+      suggestions.map(({ placeId }) => placesSearchById(placeId, true))
+    );
+    const distances = await Promise.all(
+      suggestions.map(({ placeId }) => distanceById(placeId))
+    );
+
+    enhancedSuggestions = detailedSuggestions.map((place, i) => {
+      const { distance, time } = distances[i];
+      return { ...place, distance, time };
+    });
+
+    cache.set('detailedSuggestions', enhancedSuggestions, detailsLifetime);
   }
 
-  return detailedSuggestions;
+  return enhancedSuggestions;
 };
 
 module.exports = getSuggestions;

@@ -19,6 +19,8 @@ require('dotenv').config();
 // setup
 const PORT = process.env.PORT || 1337;
 const app = express();
+
+// apply middlewares
 app.use(helmet());
 app.use(morgan('dev'));
 app.use(corsHeaders);
