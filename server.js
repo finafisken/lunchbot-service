@@ -12,6 +12,10 @@ const {
   visitedSuggestionHandler,
   getSuggestionsHandler
 } = require('./app/handlers/suggestionsHandler.js');
+const {
+  registerUserHandler,
+  authenticateUserHandler
+} = require('./app/handlers/userHandlers.js');
 
 // read env variables from .env
 require('dotenv').config();
@@ -32,6 +36,10 @@ app.get('/', (req, res) => res.send('Hello to you good sir!'));
 app.post('/suggestion/:placeId', addSuggestionHandler);
 app.put('/suggestion/:placeId', visitedSuggestionHandler);
 app.get('/suggestion', getSuggestionsHandler);
+
+// user
+app.post('/user', registerUserHandler);
+app.post('/user/:userId/auth', authenticateUserHandler);
 
 // utility endpoints
 app.get('/search/:query', placesSearchHandler);
