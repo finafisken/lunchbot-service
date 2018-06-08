@@ -1,17 +1,17 @@
 const express = require('express');
 const helmet = require('helmet');
 const morgan = require('morgan');
-const corsHeaders = require('./middlewares/cors.js');
+const corsHeaders = require('./app/middlewares/cors.js');
 const {
   placesSearchByIdHandler,
   placesSearchHandler
-} = require('./handlers/placesHandler.js');
-const { distanceByIdHandler } = require('./handlers/distanceHandler.js');
+} = require('./app/handlers/placesHandler.js');
+const { distanceByIdHandler } = require('./app/handlers/distanceHandler.js');
 const {
   addSuggestionHandler,
   visitedSuggestionHandler,
   getSuggestionsHandler
-} = require('./handlers/suggestionsHandler.js');
+} = require('./app/handlers/suggestionsHandler.js');
 
 // read env variables from .env
 require('dotenv').config();

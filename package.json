@@ -2,10 +2,9 @@
   "name": "lunchbot-service",
   "version": "1.0.0",
   "description": "Provides lunch suggestions",
-  "main": "src/index.js",
   "scripts": {
-    "start": "node src/server.js",
-    "dev": "nodemon --inspect src/server.js",
+    "start": "node server.js",
+    "dev": "nodemon --inspect server.js",
     "test": "jest",
     "test:watch": "jest --watchAll",
     "docker:build": "docker build . -t lunchbot-service",

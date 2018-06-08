@@ -5,7 +5,7 @@ const getSuggestions = require('../core/getSuggestions.js');
 exports.addSuggestionHandler = async (req, res) => {
   try {
     const response = await addSuggestion(req.params.placeId);
-    res.send(response);
+    res.status(201).send(response);
   } catch (e) {
     console.error('Something went wrong', e);
     res.sendStatus(500);
