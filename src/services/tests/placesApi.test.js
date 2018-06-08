@@ -1,7 +1,7 @@
 const mockedAxios = require('axios');
 const { placesSearchById, placesSearch } = require('../placesApi.js');
 const { placesFormatter, placesDetailFormatter } = require('../../../utils/formatter.js');
-const config = require('../../../config/main.js');
+const config = require('../../../config');
 
 const placesApiSearchResponse = require('./data/placesApiSearchResponse.json');
 const placesApiSearchByIdResponse = require('./data/placesApiSearchByIdResponse.json');

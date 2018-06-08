@@ -1,5 +1,5 @@
 const axios = require('axios');
-const config = require('../../config/main.js');
+const config = require('../../config');
 const { distanceFormatter } = require('../../utils/formatter.js');
 
 exports.distanceById = placeId => {

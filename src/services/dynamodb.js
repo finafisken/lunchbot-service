@@ -1,20 +1,20 @@
 const AWS = require('aws-sdk');
-const config = require('../../config/main.js');
+const config = require('../../config');
 
 // https://docs.aws.amazon.com/AWSJavaScriptSDK/latest/AWS/DynamoDB/DocumentClient.html
 
 const DAY_MS = 86400000; // 24 hours in ms
 
-exports.addItem = Item =>
+exports.addPlace = Item =>
   new Promise((resolve, reject) => {
     const dynamodb = new AWS.DynamoDB.DocumentClient({
-      region: config.awsRegion,
+      region: config.aws.region,
       accessKeyId: process.env.AWS_KEY_ID,
       secretAccessKey: process.env.AWS_KEY_SECRET
     });
     dynamodb.put(
       {
-        TableName: config.dynamoDbTableName,
+        TableName: config.aws.locationsDb,
         Item,
         ConditionExpression: 'attribute_not_exists(placeId)'
       },
@@ -28,16 +28,16 @@ exports.addItem = Item =>
     );
   });
 
-exports.updateItem = placeId =>
+exports.updatePlace = placeId =>
   new Promise((resolve, reject) => {
     const dynamodb = new AWS.DynamoDB.DocumentClient({
-      region: config.awsRegion,
+      region: config.aws.region,
       accessKeyId: process.env.AWS_KEY_ID,
       secretAccessKey: process.env.AWS_KEY_SECRET
     });
     dynamodb.update(
       {
-        TableName: config.dynamoDbTableName,
+        TableName: config.aws.locationsDb,
         Key: { placeId },
         UpdateExpression: 'set lastVisitedAt = :timestamp',
         ExpressionAttributeValues: {
@@ -56,18 +56,18 @@ exports.updateItem = placeId =>
     );
   });
 
-exports.getItems = () =>
+exports.getPlaces = () =>
   new Promise((resolve, reject) => {
     const lastVisitedThreshold =
       Date.now() - config.suggestions.daysSinceLastVisit * DAY_MS;
     const dynamodb = new AWS.DynamoDB.DocumentClient({
-      region: config.awsRegion,
+      region: config.aws.region,
       accessKeyId: process.env.AWS_KEY_ID,
       secretAccessKey: process.env.AWS_KEY_SECRET
     });
     dynamodb.scan(
       {
-        TableName: config.dynamoDbTableName,
+        TableName: config.aws.locationsDb,
         FilterExpression: 'lastVisitedAt <= :lastVisitedThreshold',
         ExpressionAttributeValues: {
           ':lastVisitedThreshold': lastVisitedThreshold

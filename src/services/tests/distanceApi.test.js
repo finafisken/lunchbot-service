@@ -1,7 +1,7 @@
 const mockedAxios = require('axios');
 const { distanceById } = require('../distanceApi.js');
 const { distanceFormatter } = require('../../../utils/formatter.js');
-const config = require('../../../config/main.js');
+const config = require('../../../config');
 
 const distanceApiResponse = require('./data/distanceApiResponse.json');
 

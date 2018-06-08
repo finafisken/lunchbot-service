@@ -1,7 +1,7 @@
 const placeId = '123';
 const addSpy = jest.fn(() => 'added response');
 const placesSpy = jest.fn(f => Promise.resolve({ placeId }));
-jest.doMock('../../services/dynamodb.js', () => ({ addItem: addSpy }));
+jest.doMock('../../services/dynamodb.js', () => ({ addPlace: addSpy }));
 jest.doMock('../../services/placesApi.js', () => ({ placesSearchById: placesSpy }));
 const addSuggestion = require('../addSuggestion');
 

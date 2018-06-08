@@ -1,5 +1,5 @@
 const axios = require('axios');
-const config = require('../../config/main.js');
+const config = require('../../config');
 const { placesFormatter, placesDetailFormatter } = require('../../utils/formatter.js');
 
 exports.placesSearch = query => {

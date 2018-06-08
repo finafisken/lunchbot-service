@@ -1,4 +1,4 @@
-const config = require('../config/main.js');
+const config = require('../config');
 
 const photoFormatter = photos => {
   if (!Array.isArray(photos)) return [];

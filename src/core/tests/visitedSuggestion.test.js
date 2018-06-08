@@ -1,5 +1,5 @@
 const updateSpy = jest.fn(() => 'updated response');
-jest.doMock('../../services/dynamodb.js', () => ({ updateItem: updateSpy }));
+jest.doMock('../../services/dynamodb.js', () => ({ updatePlace: updateSpy }));
 const visitedSuggestion = require('../visitedSuggestion');
 const placeId = '123';
 

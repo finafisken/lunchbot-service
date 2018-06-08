@@ -2,7 +2,7 @@ const { placesSearchById } = require('../services/placesApi.js');
 const { distanceById } = require('../services/distanceApi.js');
 const dynamodb = require('../services/dynamodb.js');
 const shuffle = require('../../utils/shuffle.js');
-const config = require('../../config/main.js');
+const config = require('../../config');
 const cacheProvider = require('../../utils/cacheProvider.js');
 
 const cache = cacheProvider.getInstance();
@@ -13,7 +13,7 @@ const getSuggestions = async () => {
   let suggestions = cache.get('suggestions');
 
   if (!suggestions) {
-    const places = await dynamodb.getItems();
+    const places = await dynamodb.getPlaces();
     suggestions = shuffle(places).slice(0, config.suggestions.numberOfSuggestions);
 
     cache.set('suggestions', suggestions, suggestionLifetime);

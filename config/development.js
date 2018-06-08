@@ -1,4 +1,5 @@
 const config = {
+  env: 'development',
   api: {
     placesSearch: 'https://maps.googleapis.com/maps/api/place/textsearch/json',
     placesPhoto: 'https://maps.googleapis.com/maps/api/place/photo?photoreference={ref}&key={key}&maxwidth=800',
@@ -10,8 +11,11 @@ const config = {
     lat: 59.3100131,
     lng: 18.0592603
   },
-  dynamoDbTableName: 'lunchbot-location-db',
-  awsRegion: 'eu-central-1',
+  aws: {
+    locationsDb: 'lunchbot-location-db',
+    usersDb: 'lunchbot-user-db',
+    region: 'eu-central-1',
+  },
   suggestions: {
     daysSinceLastVisit: 2,
     numberOfSuggestions: 3,
