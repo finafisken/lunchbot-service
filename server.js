@@ -1,6 +1,7 @@
 const express = require('express');
 const helmet = require('helmet');
 const morgan = require('morgan');
+const bodyParser = require('body-parser');
 const corsHeaders = require('./app/middlewares/cors.js');
 const {
   placesSearchByIdHandler,
@@ -23,6 +24,7 @@ require('dotenv').config();
 // setup
 const PORT = process.env.PORT || 1337;
 const app = express();
+const jsonParser = bodyParser.json();
 
 // apply middlewares
 app.use(helmet());
@@ -38,8 +40,8 @@ app.put('/suggestion/:placeId', visitedSuggestionHandler);
 app.get('/suggestion', getSuggestionsHandler);
 
 // user
-app.post('/user', registerUserHandler);
-app.post('/user/:userId/auth', authenticateUserHandler);
+app.post('/user',jsonParser, registerUserHandler);
+app.post('/user/auth', jsonParser, authenticateUserHandler);
 
 // utility endpoints
 app.get('/search/:query', placesSearchHandler);

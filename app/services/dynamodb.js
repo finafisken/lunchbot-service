@@ -82,3 +82,27 @@ exports.getPlaces = () =>
       }
     );
   });
+
+exports.addUser = Item =>
+  new Promise((resolve, reject) => {
+    const dynamodb = new AWS.DynamoDB.DocumentClient({
+      region: config.aws.region,
+      accessKeyId: process.env.AWS_KEY_ID,
+      secretAccessKey: process.env.AWS_KEY_SECRET
+    });
+    console.log(Item);
+    dynamodb.put(
+      {
+        TableName: config.aws.usersDb,
+        Item,
+        ConditionExpression: 'attribute_not_exists(userId)'
+      },
+      (err, data) => {
+        if (err) {
+          return reject(err);
+        } else {
+          return resolve(Item);
+        }
+      }
+    );
+  });

@@ -24,11 +24,14 @@
   "dependencies": {
     "aws-sdk": "^2.247.1",
     "axios": "^0.18.0",
+    "bcrypt": "^2.0.1",
+    "body-parser": "^1.18.3",
     "dotenv": "^5.0.1",
     "express": "^4.16.3",
     "helmet": "^3.12.1",
     "morgan": "^1.9.0",
-    "node-cache": "^4.2.0"
+    "node-cache": "^4.2.0",
+    "uuid": "^3.2.1"
   },
   "devDependencies": {
     "jest": "^23.0.0",
