@@ -17,7 +17,7 @@ const config = {
     region: 'eu-central-1',
   },
   suggestions: {
-    daysSinceLastVisit: 2,
+    daysSinceLastVisit: 5,
     numberOfSuggestions: 3,
     suggestionLifetime: 6, // hours
   }

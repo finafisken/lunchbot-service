@@ -90,14 +90,37 @@ exports.addUser = Item =>
       accessKeyId: process.env.AWS_KEY_ID,
       secretAccessKey: process.env.AWS_KEY_SECRET
     });
-    console.log(Item);
     dynamodb.put(
       {
         TableName: config.aws.usersDb,
         Item,
-        ConditionExpression: 'attribute_not_exists(userId)'
+        ConditionExpression: 'attribute_not_exists(userName)'
       },
       (err, data) => {
+        if (err) {
+          return reject(err);
+        } else {
+          return resolve(Item);
+        }
+      }
+    );
+  });
+
+exports.getUser = userName =>
+  new Promise((resolve, reject) => {
+    const dynamodb = new AWS.DynamoDB.DocumentClient({
+      region: config.aws.region,
+      accessKeyId: process.env.AWS_KEY_ID,
+      secretAccessKey: process.env.AWS_KEY_SECRET
+    });
+    dynamodb.get(
+      {
+        TableName: config.aws.usersDb,
+        Key: {
+          'userName': userName,
+        }
+      },
+      (err, { Item = {} }) => {
         if (err) {
           return reject(err);
         } else {
