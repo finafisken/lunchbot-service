@@ -3,8 +3,8 @@ const authenticateUser = require('../users/authenticate.js');
 
 exports.registerUserHandler = async (req, res) => {
   try {
-    const response = await registerUser(req.body);
-    res.send(response);
+    await registerUser(req.body);
+    res.send('User created');
   } catch (e) {
     console.error('Something went wrong', e);
     res.sendStatus(500);
