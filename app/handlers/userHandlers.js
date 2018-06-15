@@ -1,6 +1,10 @@
+const registerUser = require('../users/register.js');
+const authenticateUser = require('../users/authenticate.js');
+
 exports.registerUserHandler = async (req, res) => {
   try {
-    res.sendStatus(501);
+    await registerUser(req.body);
+    res.send('User created');
   } catch (e) {
     console.error('Something went wrong', e);
     res.sendStatus(500);
@@ -9,9 +13,14 @@ exports.registerUserHandler = async (req, res) => {
 
 exports.authenticateUserHandler = async (req, res) => {
   try {
-    res.sendStatus(501);
+    const response = await authenticateUser(req.body);
+    res.send(response);
   } catch (e) {
     console.error('Something went wrong', e);
-    res.sendStatus(500);
+    if (e.status === 401) {
+      res.sendStatus(401);
+    } else {
+      res.sendStatus(500);
+    }
   }
 };
