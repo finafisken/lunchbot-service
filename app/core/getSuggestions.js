@@ -34,7 +34,7 @@ const getSuggestions = async () => {
     enhancedSuggestions = detailedSuggestions.map((place, i) => {
       const { lastVisitedAt, suggestedBy } = suggestions[i];
       const { distance, time } = distances[i];
-      return { ...place, distance, time, suggestedBy };
+      return { ...place, distance, time, suggestedBy, lastVisitedAt };
     });
 
     cache.set('detailedSuggestions', enhancedSuggestions, detailsLifetime);
