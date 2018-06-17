@@ -41,12 +41,12 @@ app.put('/suggestion/:placeId', verifyAuth, visitedSuggestionHandler);
 app.get('/suggestion', getSuggestionsHandler);
 
 // user
-app.post('/user',jsonParser, registerUserHandler);
+app.post('/user', jsonParser, registerUserHandler);
 app.post('/user/auth', jsonParser, authenticateUserHandler);
 
 // utility endpoints
-app.get('/search/:query', placesSearchHandler);
-app.get('/search/id/:placeId', placesSearchByIdHandler);
-app.get('/distance/:placeId', distanceByIdHandler);
+app.get('/search/:query', verifyAuth, placesSearchHandler);
+app.get('/search/id/:placeId', verifyAuth, placesSearchByIdHandler);
+app.get('/distance/:placeId', verifyAuth, distanceByIdHandler);
 
 app.listen(PORT, () => console.log(`Lunchbot service running on port ${PORT}`));

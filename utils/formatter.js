@@ -32,7 +32,7 @@ const placesDetailFormatter = ({
   website,
   url,
   formatted_address,
-  photos
+  // photos
 }) => ({
   name,
   rating,
@@ -42,7 +42,7 @@ const placesDetailFormatter = ({
   address: formatted_address,
   placeId: place_id,
   open: opening_hours.open_now,
-  photos: photoFormatter(photos.slice(0, 3))
+  // photos: photoFormatter(photos.slice(0, 3))
 });
 
 const distanceFormatter = ({
