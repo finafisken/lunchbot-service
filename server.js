@@ -49,4 +49,4 @@ app.get('/search/:query', verifyAuth, placesSearchHandler);
 app.get('/search/id/:placeId', verifyAuth, placesSearchByIdHandler);
 app.get('/distance/:placeId', verifyAuth, distanceByIdHandler);
 
-app.listen(PORT, () => console.log(`Lunchbot service running on port ${PORT}`));
+app.listen(PORT, () => console.log(`Lunchbot service running on port ${PORT} with ${process.env.NODE_ENV} config`));
