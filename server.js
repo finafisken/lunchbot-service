@@ -12,7 +12,8 @@ const { distanceByIdHandler } = require('./app/handlers/distanceHandler.js');
 const {
   addSuggestionHandler,
   visitedSuggestionHandler,
-  getSuggestionsHandler
+  getSuggestionsHandler,
+  listSuggestionsHandler
 } = require('./app/handlers/suggestionsHandler.js');
 const {
   registerUserHandler,
@@ -39,6 +40,7 @@ app.get('/', (req, res) => res.send('Hello to you good sir!'));
 app.post('/suggestion/:placeId', verifyAuth, addSuggestionHandler);
 app.put('/suggestion/:placeId', verifyAuth, visitedSuggestionHandler);
 app.get('/suggestion', getSuggestionsHandler);
+app.get('/suggestion/list', listSuggestionsHandler);
 
 // user
 app.post('/user', jsonParser, registerUserHandler);

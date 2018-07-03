@@ -1,6 +1,7 @@
 const addSuggestion = require('../core/addSuggestion.js');
 const visitedSuggestion = require('../core/visitedSuggestion.js');
 const getSuggestions = require('../core/getSuggestions.js');
+const listSuggestions = require('../core/listSuggestions.js');
 
 exports.addSuggestionHandler = async (req, res) => {
   try {
@@ -25,6 +26,16 @@ exports.visitedSuggestionHandler = async (req, res) => {
 exports.getSuggestionsHandler = async (req, res) => {
   try {
     const response = await getSuggestions();
+    res.send(response);
+  } catch (e) {
+    console.error('Something went wrong', e);
+    res.sendStatus(500);
+  }
+};
+
+exports.listSuggestionsHandler = async (req, res) => {
+  try {
+    const response = await listSuggestions();
     res.send(response);
   } catch (e) {
     console.error('Something went wrong', e);
