@@ -1,5 +1,4 @@
 ## todo
-- authentication
 - aws permissions/config for ec2
 - figure out suggestion logic
 - sanitize input params
