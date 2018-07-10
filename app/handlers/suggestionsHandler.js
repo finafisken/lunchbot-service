@@ -31,8 +31,8 @@ exports.getSuggestionsHandler = async (req, res) => {
     const response = await getSuggestions();
 
     // sync cache header (seconds) with internal cache (ms)
-    const suggestionTimeLeft = cache.getTtl('suggestions') || 0;
-    res.header('Cache-Control', `public, max-age=${suggestionTimeLeft / 1000}`);
+    const suggestionTimeLeft = cacheProvider.getSecondsLeft('suggestions');
+    res.header('Cache-Control', `public, max-age=${suggestionTimeLeft}`);
 
     res.send(response);
   } catch (e) {
