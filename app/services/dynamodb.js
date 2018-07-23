@@ -5,6 +5,8 @@ const config = require('../../config');
 
 const DAY_MS = 86400000; // 24 hours in ms
 
+// Places DB
+
 exports.addPlace = Item =>
   new Promise((resolve, reject) => {
     const dynamodb = new AWS.DynamoDB.DocumentClient({
@@ -82,6 +84,35 @@ exports.getPlaces = () =>
       }
     );
   });
+
+exports.listPlaces = () =>
+  new Promise((resolve, reject) => {
+    const lastVisitedThreshold =
+      Date.now() - config.suggestions.daysSinceLastVisit * DAY_MS;
+    const dynamodb = new AWS.DynamoDB.DocumentClient({
+      region: config.aws.region,
+      accessKeyId: process.env.AWS_KEY_ID,
+      secretAccessKey: process.env.AWS_KEY_SECRET
+    });
+    dynamodb.scan(
+      {
+        TableName: config.aws.locationsDb,
+        // FilterExpression: 'lastVisitedAt <= :lastVisitedThreshold',
+        // ExpressionAttributeValues: {
+        //   ':lastVisitedThreshold': lastVisitedThreshold
+        // }
+      },
+      (err, { Items = [] }) => {
+        if (err) {
+          return reject(err);
+        } else {
+          return resolve(Items);
+        }
+      }
+    );
+  });
+
+// Users DB
 
 exports.addUser = Item =>
   new Promise((resolve, reject) => {

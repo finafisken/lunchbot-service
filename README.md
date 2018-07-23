@@ -7,13 +7,16 @@ Some routes require authentication, that requires the authorization token be pas
 
 ### main endpoints:
 - `GET /suggestion [public]`\
-Returns lunch place suggestions
+Returns generated lunch place suggestions
 
 - `POST /suggestion/:placeId [auth]`\
 Add a place to the suggestions pool
 
 - `PUT /suggestion/:placeId [auth]`\
 Tag a place as visited
+
+- `GET /suggestion/list [public]`\
+Returns all lunch place suggestions
 
 ### user endpoints:
 - `POST /user [public]`\

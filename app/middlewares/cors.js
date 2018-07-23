@@ -4,7 +4,7 @@ const setCorsHeaders = (req, res, next) => {
     'X-Requested-With',
     'Content-Type',
     'Accept',
-    'Authentication'
+    'Authorization'
   ].join(',');
 
   res.header('Access-Control-Allow-Origin', '*');
