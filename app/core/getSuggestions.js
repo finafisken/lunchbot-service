@@ -24,20 +24,29 @@ const getSuggestions = async () => {
   let enhancedSuggestions = cache.get('enhancedSuggestions');
 
   if (!enhancedSuggestions) {
-    const detailedSuggestions = await Promise.all(
+    let detailedSuggestions = await Promise.all(
       suggestions.map(({ placeId }) => placesSearchById(placeId, true))
     );
     const distances = await Promise.all(
       suggestions.map(({ placeId }) => distanceById(placeId))
     );
 
-    enhancedSuggestions = detailedSuggestions.map((place, i) => {
+    detailedSuggestions = detailedSuggestions.map((place, i) => {
       const { lastVisitedAt, suggestedBy } = suggestions[i];
       const { distance, time } = distances[i];
       return { ...place, distance, time, suggestedBy, lastVisitedAt };
     });
 
-    cache.set('detailedSuggestions', enhancedSuggestions, detailsLifetime);
+    const generatedAt = new Date().toUTCString();
+    const expiresAt = new Date(Date.now() + suggestionLifetime * 1000).toUTCString();
+
+    enhancedSuggestions = {
+      generatedAt,
+      expiresAt,
+      suggestions: detailedSuggestions,
+    };
+
+    cache.set('enhancedSuggestions', enhancedSuggestions, detailsLifetime);
   }
 
   return enhancedSuggestions;
