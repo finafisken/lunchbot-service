@@ -1,4 +1,4 @@
-# Lunch Bot
+# Lunch Bot 🍕🤖
 Creating peace on 🌍 by giving good lunch place suggestions
 
 ## Client endpoints
