@@ -1,0 +1,21 @@
+version: "3.7"
+services:
+  lunchbot:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    ports:
+      - "8080:1337"
+  user_db:
+    image: amazon/dynamodb-local
+    hostname: db_local_users
+    container_name: dynamodb_users
+    ports:
+      - "8082:8000"
+  location_db:
+    image: amazon/dynamodb-local
+    hostname: db_local_locations 
+    container_name: dynamodb_locations
+    ports:
+      - "8081:8000"
+  
