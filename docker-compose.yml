@@ -6,16 +6,10 @@ services:
       dockerfile: Dockerfile
     ports:
       - "8080:1337"
-  user_db:
+  local_dynamo_db:
     image: amazon/dynamodb-local
-    hostname: db_local_users
-    container_name: dynamodb_users
-    ports:
-      - "8082:8000"
-  location_db:
-    image: amazon/dynamodb-local
-    hostname: db_local_locations 
-    container_name: dynamodb_locations
+    hostname: db_local
+    container_name: dynamodb_local
     ports:
       - "8081:8000"
   
