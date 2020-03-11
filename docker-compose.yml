@@ -10,6 +10,9 @@ services:
     image: amazon/dynamodb-local
     hostname: db_local
     container_name: dynamodb_local
+    volumes: 
+      - ./scripts
+    command: /bin/sh -c "create_tables.sh"
     ports:
       - "8081:8000"
   

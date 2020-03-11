@@ -1,0 +1,13 @@
+FROM openjdk:8-jre-alpine
+
+ENV DYNAMODB_VERSION=latest
+
+RUN apk add --update curl && \
+    rm -rf /var/cache/apk/* && \
+    curl -O https://s3-us-west-2.amazonaws.com/dynamodb-local/dynamodb_local_${DYNAMODB_VERSION}.tar.gz && \
+    tar zxvf dynamodb_local_${DYNAMODB_VERSION}.tar.gz && \
+    rm dynamodb_local_${DYNAMODB_VERSION}.tar.gz
+
+EXPOSE 8000
+
+ENTRYPOINT ["java", "-Djava.library.path=.", "-jar", "DynamoDBLocal.jar",  "--sharedDb", "-inMemory", "-port", "8000"]
