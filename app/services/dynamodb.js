@@ -15,7 +15,7 @@ exports.addPlace = Item =>
       secretAccessKey: process.env.AWS_KEY_SECRET
     };
     if (process.env.NODE_ENV === 'development') {
-      dbconfig.endpoint = 'localhost:8081';
+      dbconfig.endpoint = 'http://local_dynamo_db:8000';
     }
     const dynamodb = new AWS.DynamoDB.DocumentClient(dbconfig);
     dynamodb.put(
@@ -42,7 +42,7 @@ exports.updatePlace = placeId =>
       secretAccessKey: process.env.AWS_KEY_SECRET
     };
     if (process.env.NODE_ENV === 'development') {
-      dbconfig.endpoint = 'localhost:8081';
+      dbconfig.endpoint = 'http://local_dynamo_db:8000';
     }
     const dynamodb = new AWS.DynamoDB.DocumentClient(dbconfig);
     dynamodb.update(
@@ -76,7 +76,7 @@ exports.getPlaces = () =>
       secretAccessKey: process.env.AWS_KEY_SECRET
     };
     if (process.env.NODE_ENV === 'development') {
-      dbconfig.endpoint = 'localhost:8081';
+      dbconfig.endpoint = 'http://local_dynamo_db:8000';
     }
     const dynamodb = new AWS.DynamoDB.DocumentClient(dbconfig);
     dynamodb.scan(
@@ -107,7 +107,7 @@ exports.listPlaces = () =>
       secretAccessKey: process.env.AWS_KEY_SECRET
     };
     if (process.env.NODE_ENV === 'development') {
-      dbconfig.endpoint = 'localhost:8081';
+      dbconfig.endpoint = 'http://local_dynamo_db:8000';
     }
     const dynamodb = new AWS.DynamoDB.DocumentClient(dbconfig);
     dynamodb.scan(
@@ -119,6 +119,7 @@ exports.listPlaces = () =>
         // }
       },
       (err, { Items = [] }) => {
+				console.log(err);
         if (err) {
           return reject(err);
         } else {
@@ -138,7 +139,7 @@ exports.addUser = Item =>
       secretAccessKey: process.env.AWS_KEY_SECRET
     };
     if (process.env.NODE_ENV === 'development') {
-      dbconfig.endpoint = 'localhost:8081';
+      dbconfig.endpoint = 'http://local_dynamo_db:8000';
     }
     const dynamodb = new AWS.DynamoDB.DocumentClient(dbconfig);
     dynamodb.put(
@@ -165,7 +166,7 @@ exports.getUser = userName =>
       secretAccessKey: process.env.AWS_KEY_SECRET
     };
     if (process.env.NODE_ENV === 'development') {
-      dbconfig.endpoint = 'localhost:8081';
+      dbconfig.endpoint = 'http://local_dynamo_db:8000';
     }
     const dynamodb = new AWS.DynamoDB.DocumentClient(dbconfig);
     dynamodb.get(

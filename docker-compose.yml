@@ -3,6 +3,8 @@ services:
   lunchbot:
     environment:
       - NODE_ENV=development
+      - AWS_KEY_ID=dummy
+      - AWS_KEY_SECRET=notsecret
     build:
       context: .
       dockerfile: Dockerfile
