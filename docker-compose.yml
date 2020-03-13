@@ -1,18 +1,19 @@
 version: "3.7"
 services:
   lunchbot:
+    environment:
+      - NODE_ENV=development
     build:
       context: .
       dockerfile: Dockerfile
     ports:
       - "8080:1337"
   local_dynamo_db:
-    image: amazon/dynamodb-local
-    hostname: db_local
-    container_name: dynamodb_local
-    volumes: 
-      - ./scripts
-    command: /bin/sh -c "create_tables.sh"
+    environment:
+      - NODE_ENV=development
+    build:
+      context: .
+      dockerfile: Dockerfile.local_db
     ports:
       - "8081:8000"
   

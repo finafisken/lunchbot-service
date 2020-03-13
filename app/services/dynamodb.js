@@ -9,11 +9,15 @@ const DAY_MS = 86400000; // 24 hours in ms
 
 exports.addPlace = Item =>
   new Promise((resolve, reject) => {
-    const dynamodb = new AWS.DynamoDB.DocumentClient({
+    const dbconfig = {
       region: config.aws.region,
       accessKeyId: process.env.AWS_KEY_ID,
       secretAccessKey: process.env.AWS_KEY_SECRET
-    });
+    };
+    if (process.env.NODE_ENV === 'development') {
+      dbconfig.endpoint = 'localhost:8081';
+    }
+    const dynamodb = new AWS.DynamoDB.DocumentClient(dbconfig);
     dynamodb.put(
       {
         TableName: config.aws.locationsDb,
@@ -32,11 +36,15 @@ exports.addPlace = Item =>
 
 exports.updatePlace = placeId =>
   new Promise((resolve, reject) => {
-    const dynamodb = new AWS.DynamoDB.DocumentClient({
+    const dbconfig = {
       region: config.aws.region,
       accessKeyId: process.env.AWS_KEY_ID,
       secretAccessKey: process.env.AWS_KEY_SECRET
-    });
+    };
+    if (process.env.NODE_ENV === 'development') {
+      dbconfig.endpoint = 'localhost:8081';
+    }
+    const dynamodb = new AWS.DynamoDB.DocumentClient(dbconfig);
     dynamodb.update(
       {
         TableName: config.aws.locationsDb,
@@ -62,11 +70,15 @@ exports.getPlaces = () =>
   new Promise((resolve, reject) => {
     const lastVisitedThreshold =
       Date.now() - config.suggestions.daysSinceLastVisit * DAY_MS;
-    const dynamodb = new AWS.DynamoDB.DocumentClient({
+    const dbconfig = {
       region: config.aws.region,
       accessKeyId: process.env.AWS_KEY_ID,
       secretAccessKey: process.env.AWS_KEY_SECRET
-    });
+    };
+    if (process.env.NODE_ENV === 'development') {
+      dbconfig.endpoint = 'localhost:8081';
+    }
+    const dynamodb = new AWS.DynamoDB.DocumentClient(dbconfig);
     dynamodb.scan(
       {
         TableName: config.aws.locationsDb,
@@ -89,14 +101,18 @@ exports.listPlaces = () =>
   new Promise((resolve, reject) => {
     const lastVisitedThreshold =
       Date.now() - config.suggestions.daysSinceLastVisit * DAY_MS;
-    const dynamodb = new AWS.DynamoDB.DocumentClient({
+    const dbconfig = {
       region: config.aws.region,
       accessKeyId: process.env.AWS_KEY_ID,
       secretAccessKey: process.env.AWS_KEY_SECRET
-    });
+    };
+    if (process.env.NODE_ENV === 'development') {
+      dbconfig.endpoint = 'localhost:8081';
+    }
+    const dynamodb = new AWS.DynamoDB.DocumentClient(dbconfig);
     dynamodb.scan(
       {
-        TableName: config.aws.locationsDb,
+        TableName: config.aws.locationsDb
         // FilterExpression: 'lastVisitedAt <= :lastVisitedThreshold',
         // ExpressionAttributeValues: {
         //   ':lastVisitedThreshold': lastVisitedThreshold
@@ -116,11 +132,15 @@ exports.listPlaces = () =>
 
 exports.addUser = Item =>
   new Promise((resolve, reject) => {
-    const dynamodb = new AWS.DynamoDB.DocumentClient({
+    const dbconfig = {
       region: config.aws.region,
       accessKeyId: process.env.AWS_KEY_ID,
       secretAccessKey: process.env.AWS_KEY_SECRET
-    });
+    };
+    if (process.env.NODE_ENV === 'development') {
+      dbconfig.endpoint = 'localhost:8081';
+    }
+    const dynamodb = new AWS.DynamoDB.DocumentClient(dbconfig);
     dynamodb.put(
       {
         TableName: config.aws.usersDb,
@@ -139,16 +159,20 @@ exports.addUser = Item =>
 
 exports.getUser = userName =>
   new Promise((resolve, reject) => {
-    const dynamodb = new AWS.DynamoDB.DocumentClient({
+    const dbconfig = {
       region: config.aws.region,
       accessKeyId: process.env.AWS_KEY_ID,
       secretAccessKey: process.env.AWS_KEY_SECRET
-    });
+    };
+    if (process.env.NODE_ENV === 'development') {
+      dbconfig.endpoint = 'localhost:8081';
+    }
+    const dynamodb = new AWS.DynamoDB.DocumentClient(dbconfig);
     dynamodb.get(
       {
         TableName: config.aws.usersDb,
         Key: {
-          'userName': userName,
+          userName: userName
         }
       },
       (err, { Item = {} }) => {

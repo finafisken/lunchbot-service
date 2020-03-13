@@ -1,0 +1,29 @@
+{
+  "lunchbot-user-db": [
+    {
+      "PutRequest": {
+        "Item": {
+          "password": {
+            "S": "$2y$10$ep.XFvGf7w6fHIzY3aIl6.XuN9bUNFlhoEy8T2HQLJS0ChX3h8/jm"
+          },
+          "userName": {
+            "S": "user"
+          }
+        }
+      }
+    },
+
+    {
+      "PutRequest": {
+        "Item": {
+          "password": {
+            "S": "$2y$10$ep.XFvGf7w6fHIzY3aIl6.XuN9bUNFlhoEy8T2HQLJS0ChX3h8/jm"
+          },
+          "userName": {
+            "S": "admin"
+          }
+        }
+      }
+    }
+  ]
+}

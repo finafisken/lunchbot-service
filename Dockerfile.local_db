@@ -16,6 +16,7 @@ RUN pip install awscli
 
 ADD scripts/create_tables.sh /home/dynamodblocal 
 ADD scripts/locations_mock.json /home/dynamodblocal 
+ADD scripts/users_mock.json /home/dynamodblocal 
 
 RUN chmod +x /home/dynamodblocal/create_tables.sh
 
