@@ -15,6 +15,7 @@ RUN yum -y install python-pip && yum clean all
 RUN pip install awscli
 
 ADD scripts/create_tables.sh /home/dynamodblocal 
+ADD scripts/locations_mock.json /home/dynamodblocal 
 
 RUN chmod +x /home/dynamodblocal/create_tables.sh
 

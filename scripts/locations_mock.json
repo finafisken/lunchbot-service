@@ -1,0 +1,100 @@
+{
+  "lunchbot-location-db": [
+    {
+      "PutRequest": {
+        "Item": {
+          "address": {
+            "S": "Erstagatan 22, 116 36 Stockholm, Sweden"
+          },
+          "geolocation": {
+            "M": {
+              "lat": {
+                "N": "59.31437880000001"
+              },
+              "lng": {
+                "N": "18.08994"
+              }
+            }
+          },
+          "lastVisitedAt": {
+            "N": "1530004780785"
+          },
+          "name": {
+            "S": "Ai Ramen"
+          },
+          "placeId": {
+            "S": "ChIJYT_2hwJ4X0YR0i6gTi9Xogo"
+          },
+          "website": {
+            "S": "http://www.airamen.se/"
+          }
+        }
+      }
+    },
+    {
+      "PutRequest": {
+        "Item": {
+          "address": {
+            "S": "Ringvagen 145, 116 61 Stockholm, Sweden"
+          },
+          "geolocation": {
+            "M": {
+              "lat": {
+                "N": "59.308961"
+              },
+              "lng": {
+                "N": "18.0820416"
+              }
+            }
+          },
+          "lastVisitedAt": {
+            "N": "0"
+          },
+          "name": {
+            "S": "Reggev Hummus"
+          },
+          "placeId": {
+            "S": "ChIJ_YMtw2OdX0YRFF6bafq3d2Y"
+          },
+          "website": {
+            "S": "http://www.reggevhummus.se/"
+          }
+        }
+      }
+    },
+    {
+      "PutRequest": {
+        "Item": {
+          "address": {
+            "S": "Hornsgatan 85, 117 26 Stockholm, Sweden"
+          },
+          "geolocation": {
+            "M": {
+              "lat": {
+                "N": "59.31707590000001"
+              },
+              "lng": {
+                "N": "18.0491126"
+              }
+            }
+          },
+          "lastVisitedAt": {
+            "N": "1531814968463"
+          },
+          "name": {
+            "S": "Restaurang Thongwiset"
+          },
+          "placeId": {
+            "S": "ChIJe4qjq8J3X0YReImu0hvmDdU"
+          },
+          "suggestedBy": {
+            "S": "Dr. Blau"
+          },
+          "website": {
+            "S": "http://thongwiset.se/"
+          }
+        }
+      }
+    }
+  ]
+}
